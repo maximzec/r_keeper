@@ -1,0 +1,17 @@
+{
+  "name": "e-restaraunt",
+  "version": "1.0.0",
+  "description": "e-restaraunt course work for RTU MIREA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "e-restaraunt"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
