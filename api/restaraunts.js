@@ -11,8 +11,13 @@ router.get('/' , (req, res, next) => {
 
 
 router.post('/', (req, res, next) => {
+    const restraunt = {
+        name: req.body.name,
+        id: req.body.id
+    }
     res.status(200).json({
-        message: 'POST to /rests'
+        message: 'POST to /rests',
+        restraunt: restraunt
     });
 });
 
