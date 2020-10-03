@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 
 const port = process.env.port || 3000;
@@ -9,7 +10,17 @@ const port = process.env.port || 3000;
 const restrauntRoutes = require('./api/restaraunts');
 const ordersRoutes = require('./api/orders');
 const userRoutes = require('./api/users');
-const itemRoutes = require('./api/item');
+const itemRoutes = require('./api/items');
+
+
+mongoose.connect(
+    "mongodb+srv://Admin:27854565Aa@e-res.0s63v.mongodb.net/e-res?retryWrites=true&w=majority",
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }
+);
+
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
