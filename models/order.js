@@ -1,16 +1,23 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const orderSchema = mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId,
-    items:[String],
-    readyStatus:{
-        type: Boolean,
-        default: false
+  _id: mongoose.Schema.Types.ObjectId,
+  items: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Item",
+      require: true,
+      default: [],
     },
-    timeOrdered:{
-        type:Date,
-        default: Date.now
-    } 
+  ],
+  readyStatus: {
+    type: Boolean,
+    default: false,
+  },
+  timeOrdered: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-module.exports = mongoose.model('Order' , orderSchema);
+module.exports = mongoose.model("Order", orderSchema);
