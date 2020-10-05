@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
-const item = require('./item')
 
 const orderSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    items:[item],
+    items:[String],
     readyStatus:{
         type: Boolean,
         default: false
